@@ -26,16 +26,16 @@ MongoDB는 도큐먼트 데이터베이스이다. 처음 접하는 독자를 위
 
 ```javascript
 { 
-  _id : ObjectId(‘52ab4ec6dfad251bd0b745ef’),
-  title : ‘What is MongoDB?’,
-  body : ‘MongoDB (from "humongous") is an open-source document database.’,
-  tags: [‘mongodb’,‘document database’],
+  _id : ObjectId("52ab4ec6dfad251bd0b745ef"),
+  title : "What is MongoDB?",
+  body : "MongoDB (from 'humongous') is an open-source document database.",
+  tags: ["mongodb","document database"],
   comments: [
-            { author: ‘Heidi’,
-            body: ‘Awesome post.’
+            { author: "Heidi",
+            body: "Awesome post."
             },
-            { author: ‘Eugene’,
-            body: ‘Thanks.’
+            { author: "Eugene",
+            body: "Thanks."
             }
   ] 
 }
