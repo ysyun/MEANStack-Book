@@ -16,7 +16,8 @@
 
 최근 SI에서 가장 많이 사용하는 자바의 J2EE 스펙 구현체인 WAS안에서 발생하는 Multi-Thread 제어 및 메모리 이슈의 고민을 덜어주고, 모바일 기기에서 채팅 서비스와 같은 것에서 요구하는 Push 기능을 손쉽게 개발할 수 있는 서버는 없을까? Push를 위하여 별도의 Port를 사용하긴 싫고 사용중인 HTTP Port 하나만을 사용하고 싶다면 어떤 서버기술을 선택해야 할까?
 
-서버단이 Java라면 Vert.x도 고려해 볼 만하다. 하지만 아직 레퍼런스와 문서가 부족하고, HTML5의 WebSocket기술을 사용한다. 만일 HTML5가 지원이 안된다면 어떻게 할까? 이런 고민을 해결해 주는 새로운 I/O 머신이 나왔으니 크롬 브라우져의 자바스크립트 해석기인 V8엔진을 기반으로 한 새로운 미들웨어(Middleware) Node.js 이다. Node.js는 V8 엔진에 네트워크 I/O 관련 라이브러리를 추가하여 자바스크립트 기반으로 서버 프로그래밍을 가능하게 하는 미들웨어인 것이다. Node.js를 사용하는 가장 큰 이유 중 하나가 Socket.io와 같은 이벤트 기반의 Push 모듈을 사용하기 위해서 이다. 또한 단일 쓰레드 기반으로 이벤트 기반 Asynch 처리를 함으로 Multi-Thread에 대한 고민을 해결해 준다. 동시 유저수의 처리 수치는 Paypal이 최근 WAS(J2EE)에서 Node.js로 변경하면서 동시접속자수의 처리 성능이 2배 이상 상승하였음을 보여주고 있다. [Paypal 개발자 블로그](https://www.paypal-engineering.com/2013/11/22/node-js-at-paypal/) Node.js는 모듈(Module) 기반 개발을 하며 필요한 모듈을 네트워크를 통하여 중앙서버에서 로컬PC로 추가하여 사용할 수 있다. 이를 위해 NPM(Node Package Manager) 도구가 존재하고 방대한 모듈과 레퍼런스들이 존재한다.
+서버단이 Java라면 Vert.x도 고려해 볼 만하다. 하지만 아직 레퍼런스와 문서가 부족하고, HTML5의 WebSocket기술을 사용한다. 만일 HTML5가 지원이 안된다면 어떻게 할까? 이런 고민을 해결해 주는 새로운 I/O 머신이 나왔으니 크롬 브라우져의 자바스크립트 해석기인 V8엔진을 기반으로 한 새로운 미들웨어(Middleware) Node.js 이다. Node.js는 V8 엔진에 네트워크 I/O 관련 라이브러리를 추가하여 자바스크립트 기반으로 서버 프로그래밍을 가능하게 하는 미들웨어인 것이다. Node.js를 사용하는 가장 큰 이유 중 하나가 Socket.io와 같은 이벤트 기반의 Push 모듈을 사용하기 위해서 이다. 또한 단일 쓰레드 기반으로 이벤트 기반 Asynch 처리를 함으로 Multi-Thread에 대한 고민을 해결해 준다. 동시 유저수의 처리 수치는 Paypal이 최근 WAS(J2EE)에서 Node.js로 변경하면서 동시접속자수의 처리 성능이 2배 이상 상승하였음을 보여주고 있다.  Node.js는 모듈(Module) 기반 개발을 하며 필요한 모듈을 네트워크를 통하여 중앙서버에서 로컬PC로 추가하여 사용할 수 있다. 이를 위해 NPM(Node Package Manager) 도구가 존재하고 방대한 모듈과 레퍼런스들이 존재한다.
+참조: [Paypal 개발자 블로그](https://www.paypal-engineering.com/2013/11/22/node-js-at-paypal/)
 
 ![그림 2 Node.js](./images/mw_node.png)
  
