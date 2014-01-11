@@ -3,7 +3,7 @@
 갑작이 떠오른 아이디어를 모바일 서비스로 빠르게 만들고 싶다. 클라이언트/서버/스토어 분야별 전문 개발자를 구하긴 어렵다. 나 홀로 또는 2~3명이 함께 만들어 보고 프로토타입핑하여 시작해 보고 싶을 때 MEAN Stack을 사용해 보자  
 
 
-## 서버단의 스프링같은 클라이언트단의 "WebApp Framework" 에 대한 고민
+## 클라이언트단의 "WebApp Framework" 에 대한 고민
 
 클라이언트단의 Android 또는 iOS 네이티브 코드는 익히는데 시간은 없고, 다양한 스마트 기기에 대응을 했으면 한다. 그리고 JavaScript를 어느 정도 할 수 있다. 이때 생각할 수 있는 대안이 "웹앱 사이트" 또는 "모바일 웹앱"을 만드는 것이다. 예전 jQuery 기반으로 개발하기에는 테스트, 유지보수, 개발신속성을 따졌을 때 어려움이 예상된다.
 
@@ -28,9 +28,9 @@
  ![그림 3 MongoDB](./images/nosql_mongodb.png)
  
 
-## Node.js를 기업용 WAS(Web Application Server)로 만들기
+## Node.js를 기업용 "Web Application Server" 만들기
 
-SUN이라는 회사에서(지금은 오라클에 인수됨) J2EE 스팩을 내놓면서 Tomcat, JBoss, WebSphere, WebLogic, JEUS 같은 WAS(Web Application Server)가 나왔으며, 이 또한 C계열의 TP-Monitor인 Tuxedo, Tmax같은 I/O 머신에 대응하는 Java기반 I/O Machine 이다. 예전 Client-Server 기반의 4GL툴로 개발하고 사용하던 환경에서 인터넷이 보급되면서 새로운 I/O 머신의 요구가 나오게 되었고 자연스럽게 WAS의 사용이 증가한 것이다. Java진영의 WAS는 나름의 공통된 스팩을 기반으로 웹을 이끌어 갈 수 있는 새로운 I/O 머신이 되었고, 기업에서 요구하는 트랜잭션 처리에 대한 스팩도 제안하여 미션크리티컬한 업무에 많이 사용하게 되었다. 최근에는 Tomcat같은 Servlet 엔진만 갖춘 미들웨어 위에 Spring Framework를 사용하여도 충분히 기업용 트랜잭션을 처리하는 업무를 개발할 수 있는 환경까지 오게 되었다. Java의 WAS가 웹1.0의 중심 I/O 머신이었다면 Node.js기반의 I/O Machine이 웹2.0의 요구에 부흥하는 머신이 되기위한 조건은 무엇일까? (WAS 는 Web Application Server의 약어로 Java J2EE 스펙구현체의 대명사로 쓰이는 것을 단순 의미만을 사용하여 "Web Applicaton을 운영하는 Server 머신"이라 생각해 보자)
+SUN이라는 회사에서(지금은 오라클에 인수됨) J2EE 스팩을 내놓면서 Tomcat, JBoss, WebSphere, WebLogic, JEUS 같은 Web Application Server(WAS)가 나왔으며, 이 또한 C계열의 TP-Monitor인 Tuxedo, Tmax같은 I/O 머신에 대응하는 Java기반 I/O Machine 이다. 예전 Client-Server 기반의 4GL툴로 개발하고 사용하던 환경에서 인터넷이 보급되면서 새로운 I/O 머신의 요구가 나오게 되었고 자연스럽게 WAS의 사용이 증가한 것이다. Java진영의 WAS는 나름의 공통된 스팩을 기반으로 웹을 이끌어 갈 수 있는 새로운 I/O 머신이 되었고, 기업에서 요구하는 트랜잭션 처리에 대한 스팩도 제안하여 미션크리티컬한 업무에 많이 사용하게 되었다. 최근에는 Tomcat같은 Servlet 엔진만 갖춘 미들웨어 위에 Spring Framework를 사용하여도 충분히 기업용 트랜잭션을 처리하는 업무를 개발할 수 있는 환경까지 오게 되었다. Java의 WAS가 웹1.0의 중심 I/O 머신이었다면 Node.js기반의 I/O Machine이 웹2.0의 요구에 부흥하는 머신이 되기위한 조건은 무엇일까? (WAS는 Java J2EE 스펙구현체의 대명사로 쓰이는 것을 단순 의미만을 사용하여 "Web Applicaton을 운영하는 Server 머신"이라 생각해 보자)
 
 결국 Node.js에서도 Java의 J2EE 스팩과 같은 견고한 스팩이 필요하다. 현재까지는 J2EE와 같은 스팩은 없지만 Java의 Servlet 스팩에 비견할 만한 프레임워크가 나왔으니 그것이 Express.js 이다. 이제 웹2.0의 I/O 머신은 Node.js가 될 것이고, 여기에 웹에 대한 표준 스팩 구현체는-사실 Node.js를 위한 공통된 스팩은 없다- 아니지만 가장 많이 사용하는 Express.js를 통하여 Node.js가 Tomcat과 같은 기능을 보유하게 되었다.
 
