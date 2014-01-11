@@ -74,4 +74,4 @@
 
 ![그림 6 명예의 전당](./images/srs_guru.png)
 
-
+목업에 정의한 내용이 따라 필요한 MongoDB 스키마, Node.js의 API 정의 및 CSS 프레임워크를 이용하여 화면을 만들어 가자
