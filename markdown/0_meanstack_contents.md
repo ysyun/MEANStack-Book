@@ -26,7 +26,6 @@
 
   3-2. Yeoman
 
-  3-2. NPM
 
   3-3. Git & GitHub
 
